@@ -7,6 +7,8 @@
 
 "use strict";
 
+let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+
 var spawn = require('child_process').spawn;
 
 var openfinBinary = "..\\..\\openfin-installer.exe",
@@ -33,5 +35,14 @@ exports.config = {
     } else {
         spawn(openfinBinary, openfinArgs);
     }
+  },
+
+  onPrepare: function(){
+    jasmine.getEnv().addReporter(new SpecReporter({
+      displayFailuresSummary: true,
+      displayFailuredSpec: true,
+      displaySuiteNumber: true,
+      displaySpecDuration: true
+    }));
   }
 }

@@ -20,6 +20,8 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-mocha-test": "^0.12.2",
     "load-grunt-tasks": "^1.0.0"
+  },
+  "devDependencies": {
+    "jasmine-spec-reporter": "^4.2.1"
   }
 }
-
